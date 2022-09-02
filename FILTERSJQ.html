@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {           //selecting the textbox by ID
+    var value = $(this).val().toLowerCase();      //cosider it as a lower case letters.  
+    $("#myList li").filter(function() {          //selects list with ID myList
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)     //toggles between hide
+    });                                                                   //and show, and index>=0
+  });
+});
+</script>
+</head>
+<body>
+
+<h2>Filterable List</h2>
+<p>Type something in the input field to search the list for specific items:</p>  
+<input id="myInput" type="text" placeholder="Search..">   
+<br>
+
+<ul id="myList">
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+  <li>Fourth</li>
+</ul>
+  
+</body>
+</html>
